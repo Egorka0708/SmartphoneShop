@@ -9,12 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 import java.sql.SQLException;
 
 @RestController
-public class HomeController {
+public class AndroidController {
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public ModelAndView home() {
-        ModelAndView mav = new ModelAndView("index");
-        try {mav.addObject("Smartphones", SmartphoneRepository.GetAllSmartphones()); }
+    @RequestMapping(value = "/android", method = RequestMethod.GET)
+    public ModelAndView getAppleSmartphones() {
+        ModelAndView mav = new ModelAndView("android");
+        try { mav.addObject("Smartphones", SmartphoneRepository.GetSmartphonesByOS("Android")); }
         catch (SQLException e) { }
         return mav;
     }
