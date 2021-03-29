@@ -34,15 +34,24 @@ public class SmartphoneRepository {
     }
 
     public static ArrayList<Smartphone> GetAllSmartphones() throws SQLException {
-        Properties props = readProperties();
-        String url = props.getProperty("spring.datasource.url");
-        String user = props.getProperty("spring.datasource.username");
-        String passwd = props.getProperty("spring.datasource.password");
-
-        Connection con = DriverManager.getConnection(url, user, passwd);
-        PreparedStatement pst = con.prepareStatement("SELECT * FROM smartphones_table");
+        Connection con = GetConnection(readProperties());
+        String sql = "SELECT * FROM smartphones_table";
+        PreparedStatement pst = con.prepareStatement(sql);
         ResultSet rs = pst.executeQuery();
+        return RawToArray(rs);
+    }
 
+    public static ArrayList<Smartphone> GetSmartphonesByOS(String OS) throws SQLException {
+        Connection con = GetConnection(readProperties());
+        String sql = "SELECT * FROM smartphones_table WHERE os = ?";
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1,OS);
+        ResultSet rs = pst.executeQuery();
+        return RawToArray(rs);
+    }
+
+    private static ArrayList<Smartphone> RawToArray(ResultSet rs) throws SQLException
+    {
         var Smartphones = new ArrayList<Smartphone>();
         while (rs.next()) {
             var tempSmartphones = new Smartphone();
@@ -55,27 +64,11 @@ public class SmartphoneRepository {
         return Smartphones;
     }
 
-    public static ArrayList<Smartphone> GetSmartphonesByOS(String OS) throws SQLException {
-        Properties props = readProperties();
+    private static Connection GetConnection(Properties props) throws SQLException
+    {
         String url = props.getProperty("spring.datasource.url");
         String user = props.getProperty("spring.datasource.username");
         String passwd = props.getProperty("spring.datasource.password");
-        String sql = "SELECT * FROM smartphones_table WHERE os = ?";
-
-        Connection con = DriverManager.getConnection(url, user, passwd);
-        PreparedStatement pst = con.prepareStatement(sql);
-        pst.setString(1,OS);
-        ResultSet rs = pst.executeQuery();
-
-        var smartphones = new ArrayList<Smartphone>();
-        while (rs.next()) {
-            var tempSmartphones = new Smartphone();
-            tempSmartphones.setId(rs.getInt(1));
-            tempSmartphones.setOS(rs.getString(2));
-            tempSmartphones.setName(rs.getString(3));
-            tempSmartphones.setImg(rs.getString(4));
-            smartphones.add(tempSmartphones);
-        }
-        return smartphones;
+        return DriverManager.getConnection(url, user, passwd);
     }
 }

@@ -5,6 +5,7 @@
     <title>Smartphone Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -30,17 +31,17 @@
             </div>
         </nav>
     </header>
-
-    <th:block th:each="Smartphone : ${Smartphones}">
+    <div class="container mt-5">
         <div class="row mt-5 mb-2">
-        <div class="container mt-5">
-            <img th:src="${Smartphone.getImg()}"/>
-            <h2 th:text="${Smartphone.getName()}"></h2>
-            <p th:text="${Smartphone.getOS()}"></p>
+            <th:block th:each="Smartphone : ${Smartphones}">
+                <div class="col-lg-4">
+                    <img class="img-thumbnail" th:src="${Smartphone.getImg()}"/>
+                    <h2 th:text="${Smartphone.getName()}"></h2>
+                    <p th:text="${Smartphone.getOS()}"></p>
+                </div>
+            </th:block>
         </div>
     </div>
-    </th:block>
-
     <footer class="container mt-4 navbar-fixed-bottom row-fluid">
         <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
     </footer>

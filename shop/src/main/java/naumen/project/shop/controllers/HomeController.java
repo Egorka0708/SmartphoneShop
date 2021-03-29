@@ -10,7 +10,6 @@ import java.sql.SQLException;
 
 @RestController
 public class HomeController {
-
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelAndView home() {
         ModelAndView mav = new ModelAndView("index");

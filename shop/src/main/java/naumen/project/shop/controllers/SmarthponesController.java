@@ -12,7 +12,7 @@ import java.sql.SQLException;
 @RestController
 public class SmarthponesController {
 
-    @RequestMapping(value = {"/category/{category}"}, method = RequestMethod.GET)
+    @RequestMapping(value = "/category/{category}", method = RequestMethod.GET)
     public ModelAndView getSmartphonesList(@PathVariable String category) {
         ModelAndView mav = new ModelAndView("list");
         try { mav.addObject("SmartphonesByOS", SmartphoneRepository.GetSmartphonesByOS(category)); }

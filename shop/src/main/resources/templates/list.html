@@ -5,42 +5,43 @@
     <title>Smartphone Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">SmartphoneShop</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/home">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/category/Apple">Apple</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/category/Android">Android</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <th:block th:each="Smartphone : ${SmartphonesByOS}">
-        <div class="row mt-5 mb-2">
-            <div class="container mt-5">
-                <img th:src="${Smartphone.getImg()}"/>
-                <h2 th:text="${Smartphone.getName()}"></h2>
-                <p th:text="${Smartphone.getOS()}"></p>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/home">SmartphoneShop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/home">Smartphones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/Apple">Apple</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/category/Android">Android</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </th:block>
-
+    </nav>
+</header>
+    <div class="container mt-5">
+        <div class="row mt-5 mb-2">
+            <th:block th:each="Smartphone : ${SmartphonesByOS}">
+                <div class="col-lg-4">
+                    <img class="img-thumbnail" th:src="'../'+${Smartphone.getImg()}"/>
+                    <h2 th:text="${Smartphone.getName()}"></h2>
+                    <p th:text="${Smartphone.getOS()}"></p>
+                </div>
+            </th:block>
+        </div>
+    </div>
     <footer class="container mt-4 navbar-fixed-bottom row-fluid">
         <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
     </footer>

@@ -30,11 +30,7 @@ public class Smartphone {
         this.name = name;
     }
 
-    public String getImg() {
-        return img;
-    }
+    public String getImg() { return img; }
 
-    public void setImg(String img) {
-        this.img = img;
-    }
+    public void setImg(String img) { this.img = img; }
 }
