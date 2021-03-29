@@ -10,14 +10,14 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/home">SmartphoneShop</a>
+                <a class="navbar-brand" href="/">SmartphoneShop</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/home">Smartphones</a>
+                            <a class="nav-link" href="/home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/category/Apple">Apple</a>
@@ -31,14 +31,14 @@
         </nav>
     </header>
 
-    <th:block th:each="Smartphone : ${Smartphones}">
+    <th:block th:each="Smartphone : ${SmartphonesByOS}">
         <div class="row mt-5 mb-2">
-        <div class="container mt-5">
-            <img th:src="${Smartphone.getImg()}"/>
-            <h2 th:text="${Smartphone.getName()}"></h2>
-            <p th:text="${Smartphone.getOS()}"></p>
+            <div class="container mt-5">
+                <img th:src="${Smartphone.getImg()}"/>
+                <h2 th:text="${Smartphone.getName()}"></h2>
+                <p th:text="${Smartphone.getOS()}"></p>
+            </div>
         </div>
-    </div>
     </th:block>
 
     <footer class="container mt-4 navbar-fixed-bottom row-fluid">

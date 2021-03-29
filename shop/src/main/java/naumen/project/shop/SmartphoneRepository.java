@@ -49,6 +49,7 @@ public class SmartphoneRepository {
             tempSmartphones.setId(rs.getInt(1));
             tempSmartphones.setOS(rs.getString(2));
             tempSmartphones.setName(rs.getString(3));
+            tempSmartphones.setImg(rs.getString(4));
             Smartphones.add(tempSmartphones);
         }
         return Smartphones;
@@ -72,6 +73,7 @@ public class SmartphoneRepository {
             tempSmartphones.setId(rs.getInt(1));
             tempSmartphones.setOS(rs.getString(2));
             tempSmartphones.setName(rs.getString(3));
+            tempSmartphones.setImg(rs.getString(4));
             smartphones.add(tempSmartphones);
         }
         return smartphones;
