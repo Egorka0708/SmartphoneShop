@@ -35,19 +35,15 @@
         </div>
     </nav>
 </header>
-    <div class="container mt-5">
-        <div class="row mt-5 mb-2">
-            <th:block th:each="Smartphone : ${SmartphonesByOS}">
-                <div class="col-lg-4">
-                    <img class="img-thumbnail" th:src="'../'+${Smartphone.getImg()}"/>
-                    <h2 th:text="${Smartphone.getName()}"></h2>
-                    <p th:text="${Smartphone.getOS()}"></p>
-                </div>
-            </th:block>
-        </div>
-    </div>
-    <footer class="container mt-4 navbar-fixed-bottom row-fluid">
-        <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
-    </footer>
+<div class="form-group">
+    <form action="#" th:action="@{/registration}" th:object="${user}" method="post" >
+        <div><label>login: <input type="text" th:field="*{login}" /></label></div>
+        <div><label>password: <input type="password" th:field="*{password}" /></label></div>
+        <div><button type="submit">Sign Up</button></div>
+    </form>
+</div>
+<footer class="container mt-4 navbar-fixed-bottom row-fluid">
+    <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
+</footer>
 </body>
 </html>

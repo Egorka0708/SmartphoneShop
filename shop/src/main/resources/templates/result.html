@@ -27,27 +27,17 @@
                         <a class="nav-link" href="/category/Android">Android</a>
                     </li>
                 </ul>
-                <div style="margin-left: 600px ">
-                    <a type="button" class="btn btn-primary" href="/registration">SignUp</a>
-                    <a type="button" class="btn btn-primary" href="/authorization">SignIn</a>
-                </div>
             </div>
         </div>
     </nav>
 </header>
-    <div class="container mt-5">
-        <div class="row mt-5 mb-2">
-            <th:block th:each="Smartphone : ${SmartphonesByOS}">
-                <div class="col-lg-4">
-                    <img class="img-thumbnail" th:src="'../'+${Smartphone.getImg()}"/>
-                    <h2 th:text="${Smartphone.getName()}"></h2>
-                    <p th:text="${Smartphone.getOS()}"></p>
-                </div>
-            </th:block>
-        </div>
-    </div>
-    <footer class="container mt-4 navbar-fixed-bottom row-fluid">
-        <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
-    </footer>
+<div>
+    <h1>Result</h1>
+    <p th:text="'login: ' + ${user.getLogin()}" />
+    <p th:text="'password: ' + ${user.getPassword()}" />
+</div>
+<footer class="container mt-4 navbar-fixed-bottom row-fluid">
+    <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
+</footer>
 </body>
 </html>
