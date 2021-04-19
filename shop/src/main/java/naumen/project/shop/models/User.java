@@ -1,5 +1,6 @@
 package naumen.project.shop.models;
 
+<<<<<<< Updated upstream
 import javax.persistence.*;
 
 @Entity
@@ -22,11 +23,33 @@ public class User {
 
     public void setId(long id) { this.id = id; }
 
+=======
+public class User {
+
+    private String login;
+    private String password;
+    private int id;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+>>>>>>> Stashed changes
     public String getLogin() { return login; }
 
     public void setLogin(String login) { this.login = login; }
 
+<<<<<<< Updated upstream
     public String getPassword() { return password; }
 
     public void setPassword(String password) { this.password = password; }
+=======
+    public int getId() { return id; }
+
+    public void setId(int id) {this.id = id; }
+>>>>>>> Stashed changes
 }

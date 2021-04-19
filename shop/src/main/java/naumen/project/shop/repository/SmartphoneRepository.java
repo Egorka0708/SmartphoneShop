@@ -1,13 +1,75 @@
 package naumen.project.shop.repository;
 
+import naumen.project.shop.ShopApplication;
 import naumen.project.shop.models.Smartphone;
-import org.springframework.data.repository.CrudRepository;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import java.util.List;
+public class SmartphoneRepository {
 
-public interface SmartphoneRepository extends CrudRepository<Smartphone, Long> {
+    public static Properties readProperties() {
 
-    Smartphone findById(long id);
-    List<Smartphone> findAll();
-    List<Smartphone> findAllByOS(String OS);
+        Properties props = new Properties();
+        Path myPath = Paths.get("src/main/resources/application.properties");
+
+        try {
+            BufferedReader bf = Files.newBufferedReader(myPath,
+                    StandardCharsets.UTF_8);
+
+            props.load(bf);
+        } catch (IOException ex) {
+            Logger.getLogger(ShopApplication.class.getName()).log(
+                    Level.SEVERE, null, ex);
+        }
+
+        return props;
+    }
+
+    public static ArrayList<Smartphone> GetAllSmartphones() throws SQLException {
+        Connection con = GetConnection(readProperties());
+        String sql = "SELECT * FROM smartphones_table";
+        PreparedStatement pst = con.prepareStatement(sql);
+        ResultSet rs = pst.executeQuery();
+        return RawToArray(rs);
+    }
+
+    public static ArrayList<Smartphone> GetSmartphonesByOS(String OS) throws SQLException {
+        Connection con = GetConnection(readProperties());
+        String sql = "SELECT * FROM smartphones_table WHERE os = ?";
+        PreparedStatement pst = con.prepareStatement(sql);
+        pst.setString(1,OS);
+        ResultSet rs = pst.executeQuery();
+        return RawToArray(rs);
+    }
+
+    private static ArrayList<Smartphone> RawToArray(ResultSet rs) throws SQLException
+    {
+        var Smartphones = new ArrayList<Smartphone>();
+        while (rs.next()) {
+            var tempSmartphones = new Smartphone();
+            tempSmartphones.setId(rs.getInt(1));
+            tempSmartphones.setOS(rs.getString(2));
+            tempSmartphones.setName(rs.getString(3));
+            tempSmartphones.setImg(rs.getString(4));
+            Smartphones.add(tempSmartphones);
+        }
+        return Smartphones;
+    }
+
+    private static Connection GetConnection(Properties props) throws SQLException
+    {
+        String url = props.getProperty("spring.datasource.url");
+        String user = props.getProperty("spring.datasource.username");
+        String passwd = props.getProperty("spring.datasource.password");
+        return DriverManager.getConnection(url, user, passwd);
+    }
 }
