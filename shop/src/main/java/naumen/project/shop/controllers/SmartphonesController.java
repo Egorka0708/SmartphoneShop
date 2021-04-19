@@ -1,12 +1,8 @@
 package naumen.project.shop.controllers;
 
-<<<<<<< Updated upstream
 import naumen.project.shop.services.SmartphoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-=======
-import naumen.project.shop.repository.SmartphoneRepository;
->>>>>>> Stashed changes
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

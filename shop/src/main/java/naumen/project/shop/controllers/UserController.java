@@ -1,7 +1,6 @@
 package naumen.project.shop.controllers;
 
 import naumen.project.shop.models.User;
-<<<<<<< Updated upstream
 import naumen.project.shop.services.SmartphoneService;
 import naumen.project.shop.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,43 +52,3 @@ public class UserController {
             return "redirect:/authorization";
     }
 }
-=======
-import naumen.project.shop.repository.UserRepository;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.sql.SQLException;
-
-
-@Controller
-public class UserController {
-
-    @GetMapping("/registration")
-    public String registrationForm(Model model) {
-        model.addAttribute("user", new User());
-        return "registration";
-    }
-
-    @PostMapping("/registration")
-    public String registrationSubmit(@ModelAttribute User user, Model model) {
-        model.addAttribute("user", user);
-        try { UserRepository.AddUser(user); }
-        catch (SQLException e) {System.out.println(e.getMessage()); }
-        return "result";
-    }
-
-    @PostMapping("/authorization")
-    public String authorizationSubmit(@ModelAttribute User user, Model model) {
-        model.addAttribute("user", user);
-        Boolean exists;
-        try { exists = UserRepository.CheckUser(user); }
-        catch (SQLException e) {System.out.println(e.getMessage()); }
-        return "result";
-    }
-
-
-
-}
-
->>>>>>> Stashed changes
