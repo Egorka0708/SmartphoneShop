@@ -3,7 +3,6 @@ package naumen.project.shop;
 import naumen.project.shop.models.Smartphone;
 import naumen.project.shop.repository.SmartphoneRepository;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Configuration;
@@ -29,5 +28,4 @@ public class ShopApplication {
 		repository.save(new Smartphone(11, "Apple", "IPhone 12 Pro Max", "images/IPhone_12_Pro_Max.jpg"));
 		repository.save(new Smartphone(12, "Android", "realme X3 Superzoom", "images/realme_X3_Superzoom.jpg"));
 	}
-
 }

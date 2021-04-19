@@ -38,19 +38,21 @@
         </div>
     </nav>
 </header>
-    <div class="container mt-5">
-        <div class="row mt-5 mb-2">
-            <th:block th:each="Smartphone : ${SmartphonesByOS}">
-                <div class="col-lg-4">
-                    <img class="img-thumbnail" th:src="'../'+${Smartphone.getImg()}"/>
-                    <h2 th:text="${Smartphone.getName()}"></h2>
-                    <p th:text="${Smartphone.getOS()}"></p>
-                </div>
-            </th:block>
-        </div>
+<div style="display: flex; justify-content: center; align-items: center; width: 100%; flex-direction: column; ">
+    <h1>We are here</h1>
+    <iframe width="800" height="500" frameborder="0" src="https://www.bing.com/maps/embed?h=500&w=800&cp=56.83494805378751~60.56329188503058&lvl=18&typ=d&sty=r&src=SHELL&FORM=MBEDV8" scrolling="no">
+    </iframe>
+    <div style="white-space: nowrap; text-align: center; width: 800px; padding: 6px 0;">
+        <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=56.83494805378751~60.56329188503058&amp;sty=r&amp;lvl=18&amp;FORM=MBEDLD">Увеличить карту</a> &nbsp; | &nbsp;
+        <a id="dirMapLink" target="_blank" href="https://www.bing.com/maps/directions?cp=56.83494805378751~60.56329188503058&amp;sty=r&amp;lvl=18&amp;rtp=~pos.56.83494805378751_60.56329188503058____&amp;FORM=MBEDLD">Получить маршрут</a>
     </div>
-    <footer class="container mt-4 navbar-fixed-bottom row-fluid">
-        <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
-    </footer>
+    <h2>Contacts</h2>
+    <p>Yekaterinburg, Tatishcheva 49a</p>
+    <p>+7 777 777-77-77</p>
+    <p>email@mail.ru</p>
+</div>
+<footer class="container mt-4 navbar-fixed-bottom row-fluid">
+    <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
+</footer>
 </body>
 </html>

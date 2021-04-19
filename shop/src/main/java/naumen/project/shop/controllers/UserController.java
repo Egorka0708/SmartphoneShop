@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @RequestMapping(value="/registration", method = RequestMethod.POST)
-    public String registrationSumbit(@RequestParam String login, @RequestParam String password, Model model) {
+    public String registrationSubmit(@RequestParam String login, @RequestParam String password, Model model) {
         var user = new User(login, password);
         model.addAttribute("user", user);
         System.out.print(userService.saveUser(user));
@@ -42,11 +42,11 @@ public class UserController {
     }
 
     @RequestMapping(value="/authorization", method = RequestMethod.POST)
-    public String authorizationSumbit(@RequestParam String login, @RequestParam String password, Model model) {
+    public String authorizationSubmit(@RequestParam String login, @RequestParam String password, Model model) {
         var user = new User(login, password);
         model.addAttribute("user", user);
-
-        if (userService.findUser(login) != null)
+        var checkUser = userService.findUser(login);
+        if (checkUser != null) //checkUser.getPassword().equals(password)
             return "result";
         else
             return "redirect:/authorization";
