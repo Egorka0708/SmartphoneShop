@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "os": "Android",
+    "name": "Samsung Galaxy S20 Ultra",
+    "img": "images/Samsung_Galaxy_S20_Ultra.jpg"
+  },
+  {
+    "id": 2,
+    "os": "Android",
+    "name": "Huawei P40 Pro",
+    "img": "images/Huawei_P40_Pro.jpg"
+  },
+  {
+    "id": 3,
+    "os": "Apple",
+    "name": "IPhone 12 mini",
+    "img": "images/IPhone_12_mini.jpg"
+  },
+  {
+    "id": 4,
+    "os": "Android",
+    "name": "Xiaomi Poco M3",
+    "img": "images/Xiaomi_Poco_M3.jpg"
+  },
+  {
+    "id": 5,
+    "os": "Apple",
+    "name": "IPhone 12 Pro",
+    "img": "images/IPhone_12_Pro.jpg"
+  },
+  {
+    "id": 6,
+    "os": "Android",
+    "name": "OnePlus 8",
+    "img": "images/OnePlus_8.jpg"
+  },
+  {
+    "id": 7,
+    "os": "Apple",
+    "name": "IPhone 11",
+    "img": "images/IPhone_11.jpg"
+  },
+  {
+    "id": 8,
+    "os": "Android",
+    "name": "Samsung Galaxy Nota 20 Ultra",
+    "img": "images/Samsung_Galaxy_Nota_20_Ultra.jpg"
+  },
+  {
+    "id": 9,
+    "os": "Apple",
+    "name": "IPhone X",
+    "img": "images/IPhone_X.jpg"
+  },
+  {
+    "id": 10,
+    "os": "Android",
+    "name": "Honor 30",
+    "img": "images/Honor_30.png"
+  },
+  {
+    "id": 11,
+    "os": "Apple",
+    "name": "IPhone 12 Pro Max",
+    "img": "images/IPhone_12_Pro_Max.jpg"
+  },
+  {
+    "id": 12,
+    "os": "Android",
+    "name": "realme X3 Superzoom",
+    "img": "images/realme_X3_Superzoom.jpg"
+  }
+]

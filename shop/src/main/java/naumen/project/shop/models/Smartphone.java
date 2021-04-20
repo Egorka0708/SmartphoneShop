@@ -1,15 +1,22 @@
 package naumen.project.shop.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "smartphones_table")
 public class Smartphone {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
     private String OS;
+
     private String name;
+
     private String img;
 
     protected Smartphone() {}

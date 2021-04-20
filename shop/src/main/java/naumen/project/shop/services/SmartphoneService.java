@@ -20,7 +20,8 @@ public class SmartphoneService {
         return smartphoneRepository.findAllByOS(OS);
     }
 
-    public Smartphone findSmartphoneById(long id) {
-        return smartphoneRepository.findById(id);
-    }
+    public Smartphone findSmartphoneById(long id) { return smartphoneRepository.findById(id); }
+
+    public Smartphone save(Smartphone smartphone) {return  smartphoneRepository.save(smartphone); }
+
 }
