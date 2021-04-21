@@ -38,21 +38,16 @@
         </div>
     </nav>
 </header>
-    <div class="container mt-5">
-        <div class="row mt-5 mb-2">
-            <th:block th:each="Smartphone : ${SmartphonesByOS}">
-                <div class="col-lg-4">
-                    <img class="img-thumbnail" th:src="'../'+${Smartphone.getImg()}"/>
-                    <h2 th:text="${Smartphone.getName()}"></h2>
-                    <p th:text="${Smartphone.getOS()}"></p>
-                    <p>Цена: <span th:text="${Smartphone.getPrice()}"></span></p>
-                    <p><a class="btn btn-warning" th:href="@{/shopcart/{id}(id=${Smartphone.getId()})}">Заказать</a></p>
-                </div>
-            </th:block>
-        </div>
+<div>
+    <div class="alert alert-warning mt-3">
+        <b>Смартфон: <span th:text="${Smartphone.getName()}"></span></b><br />
+        <b>Цена: <span th:text="${Smartphone.getPrice()}"></span></b>
     </div>
-    <footer class="container mt-4 navbar-fixed-bottom row-fluid">
-        <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
-    </footer>
+    <hr />
+    <a class="btn btn-danger mb-5" href="/checkout">Заказать</a>
+</div>
+<footer class="container mt-4 navbar-fixed-bottom row-fluid">
+    <p>© 2021 Все права защищены by Sanya, Egorka & Andrey <a href="#">Соглашение</a> </p>
+</footer>
 </body>
 </html>

@@ -37,7 +37,8 @@ public class ShopApplication {
 			try {
 				List<Smartphone> smartphones = mapper.readValue(inputStream,typeReference);
 				for (Smartphone smartphone:smartphones) {
-					smartphoneService.save(smartphone);
+					if (!smartphones.contains(smartphone))
+						smartphoneService.save(smartphone);
 				}
 				System.out.println("Smartphones Saved!");
 			} catch (IOException e){

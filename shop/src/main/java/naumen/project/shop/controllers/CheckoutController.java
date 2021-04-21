@@ -1,18 +1,16 @@
 package naumen.project.shop.controllers;
 
-import naumen.project.shop.services.SmartphoneService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ContactsController {
+public class CheckoutController {
 
-    @RequestMapping(value = "/contacts", method = RequestMethod.GET)
+    @RequestMapping(value = "/checkout", method = RequestMethod.GET)
     public ModelAndView contacts() {
-        ModelAndView mav = new ModelAndView("map");
+        ModelAndView mav = new ModelAndView("checkout");
         return mav;
     }
 }

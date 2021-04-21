@@ -1,74 +1,86 @@
 [
   {
-    "id": 1,
-    "os": "Android",
-    "name": "Samsung Galaxy S20 Ultra",
-    "img": "images/Samsung_Galaxy_S20_Ultra.jpg"
-  },
-  {
     "id": 2,
     "os": "Android",
-    "name": "Huawei P40 Pro",
-    "img": "images/Huawei_P40_Pro.jpg"
+    "name": "Samsung Galaxy S20 Ultra",
+    "img": "images/Samsung_Galaxy_S20_Ultra.jpg",
+    "price": "50000"
   },
   {
     "id": 3,
-    "os": "Apple",
-    "name": "IPhone 12 mini",
-    "img": "images/IPhone_12_mini.jpg"
+    "os": "Android",
+    "name": "Huawei P40 Pro",
+    "img": "images/Huawei_P40_Pro.jpg",
+    "price": "40000"
   },
   {
     "id": 4,
-    "os": "Android",
-    "name": "Xiaomi Poco M3",
-    "img": "images/Xiaomi_Poco_M3.jpg"
+    "os": "Apple",
+    "name": "IPhone 12 mini",
+    "img": "images/IPhone_12_mini.jpg",
+    "price": "80000"
   },
   {
     "id": 5,
-    "os": "Apple",
-    "name": "IPhone 12 Pro",
-    "img": "images/IPhone_12_Pro.jpg"
+    "os": "Android",
+    "name": "Xiaomi Poco M3",
+    "img": "images/Xiaomi_Poco_M3.jpg",
+    "price": "120000"
   },
   {
     "id": 6,
-    "os": "Android",
-    "name": "OnePlus 8",
-    "img": "images/OnePlus_8.jpg"
+    "os": "Apple",
+    "name": "IPhone 12 Pro",
+    "img": "images/IPhone_12_Pro.jpg",
+    "price": "40000"
   },
   {
     "id": 7,
-    "os": "Apple",
-    "name": "IPhone 11",
-    "img": "images/IPhone_11.jpg"
+    "os": "Android",
+    "name": "OnePlus 8",
+    "img": "images/OnePlus_8.jpg",
+    "price": "70000"
   },
   {
     "id": 8,
-    "os": "Android",
-    "name": "Samsung Galaxy Nota 20 Ultra",
-    "img": "images/Samsung_Galaxy_Nota_20_Ultra.jpg"
+    "os": "Apple",
+    "name": "IPhone 11",
+    "img": "images/IPhone_11.jpg",
+    "price": "90000"
   },
   {
     "id": 9,
-    "os": "Apple",
-    "name": "IPhone X",
-    "img": "images/IPhone_X.jpg"
+    "os": "Android",
+    "name": "Samsung Galaxy Nota 20 Ultra",
+    "img": "images/Samsung_Galaxy_Nota_20_Ultra.jpg",
+    "price": "85000"
   },
   {
     "id": 10,
-    "os": "Android",
-    "name": "Honor 30",
-    "img": "images/Honor_30.png"
+    "os": "Apple",
+    "name": "IPhone X",
+    "img": "images/IPhone_X.jpg",
+    "price": "65000"
   },
   {
     "id": 11,
-    "os": "Apple",
-    "name": "IPhone 12 Pro Max",
-    "img": "images/IPhone_12_Pro_Max.jpg"
+    "os": "Android",
+    "name": "Honor 30",
+    "img": "images/Honor_30.png",
+    "price": "55000"
   },
   {
     "id": 12,
+    "os": "Apple",
+    "name": "IPhone 12 Pro Max",
+    "img": "images/IPhone_12_Pro_Max.jpg",
+    "price": "55000"
+  },
+  {
+    "id": 13,
     "os": "Android",
     "name": "realme X3 Superzoom",
-    "img": "images/realme_X3_Superzoom.jpg"
+    "img": "images/realme_X3_Superzoom.jpg",
+    "price": "50000"
   }
 ]
