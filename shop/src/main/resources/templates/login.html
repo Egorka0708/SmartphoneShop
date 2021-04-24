@@ -1,13 +1,14 @@
 <!DOCTYPE HTML>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org/%22%3E">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/%22%3E"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <title>Smartphone Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
+
 <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
@@ -32,17 +33,17 @@
                 </ul>
                 <div style="margin-left: 550px ">
                     <a type="button" class="btn btn-primary" href="/registration">SignUp</a>
-                    <a type="button" class="btn btn-primary" href="/authorization">SignIn</a>
+                    <a type="button" class="btn btn-primary" href="/login">SignIn</a>
                 </div>
             </div>
         </div>
     </nav>
 </header>
 <div class="form-group">
-    <form action="#" th:action="@{/authorization}" th:object="${user}" method="post" >
-        <div><label>login: <input type="text" th:field="*{login}" /></label></div>
-        <div><label>password: <input type="password" th:field="*{password}" /></label></div>
-        <div><button type="submit">Sign In</button></div>
+    <form th:action="@{/login}" method="post">
+        <div><label> User Name : <input type="text" name="username"/> </label></div>
+        <div><label> Password: <input type="password" name="password"/> </label></div>
+        <div><input type="submit" value="Sign In"/></div>
     </form>
 </div>
 <footer class="container mt-4 navbar-fixed-bottom row-fluid">

@@ -5,7 +5,6 @@
     <title>Smartphone Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
 <header>
@@ -32,7 +31,7 @@
                 </ul>
                 <div style="margin-left: 550px ">
                     <a type="button" class="btn btn-primary" href="/registration">SignUp</a>
-                    <a type="button" class="btn btn-primary" href="/authorization">SignIn</a>
+                    <a type="button" class="btn btn-primary" href="/login">SignIn</a>
                 </div>
             </div>
         </div>
@@ -40,8 +39,9 @@
 </header>
 <div class="form-group">
     <form action="#" th:action="@{/registration}" th:object="${user}" method="post" >
-        <div><label>login: <input type="text" th:field="*{login}" /></label></div>
+        <div><label>login: <input type="text" th:field="*{username}" /></label></div>
         <div><label>password: <input type="password" th:field="*{password}" /></label></div>
+        <div><label>password Confirm: <input type="password" th:field="*{passwordConfirm}" /></label></div>
         <div><button type="submit">Sign Up</button></div>
     </form>
 </div>

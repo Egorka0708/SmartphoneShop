@@ -1,8 +1,8 @@
 package naumen.project.shop.repository;
 
 import naumen.project.shop.models.User;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends CrudRepository<User, Long> {
-    User findUserByLogin(String login);
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findUserByUsername(String username);
 }
