@@ -6,6 +6,8 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <title>Smartphone Shop</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="987222695666-t4sku6j6ehmn85a7td1mogm1ebp95p65.apps.googleusercontent.com">
 </head>
 <body>
 
@@ -44,6 +46,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
         <div><label> User Name : <input type="text" name="username"/> </label></div>
         <div><label> Password: <input type="password" name="password"/> </label></div>
         <div><input type="submit" value="Sign In"/></div>
+        <a href="/oauth2/authorization/google">Google</a>
     </form>
 </div>
 <footer class="container mt-4 navbar-fixed-bottom row-fluid">
