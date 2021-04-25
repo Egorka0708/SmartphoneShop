@@ -29,9 +29,12 @@
                             <a class="nav-link" href="/contacts">Contacts</a>
                         </li>
                     </ul>
-                    <div style="margin-left: 550px ">
+                    <div style="margin-left: 550px" th:if="${!isAuth}">
                         <a type="button" class="btn btn-primary" href="/registration">SignUp</a>
                         <a type="button" class="btn btn-primary" href="/login">SignIn</a>
+                    </div>
+                    <div style="margin-left: 550px" th:if="${isAuth}">
+                        <a th:text="${username}" style="color: white;"></a>
                     </div>
                 </div>
             </div>
