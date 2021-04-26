@@ -13,7 +13,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.*;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Configuration
 @SpringBootApplication
@@ -48,18 +51,21 @@ public class ShopApplication {
 	@Bean
 	CommandLineRunner runner(SmartphoneService smartphoneService){
 		return args -> {
-			// read JSON and load json
-			// чтобы это работало, надо в pgAdmin на таблице ввести скрипт (правой кнопкой - скрипт)
-			// CREATE SEQUENCE hibernate_sequence START 1;
-			// id начнут сами проставляться. Похоже из за того что мы ручками делали бд, у нас по умолчанию это не стоит
 			ObjectMapper mapper = new ObjectMapper();
-
+			var allExistingSmartphones = smartphoneService.allSmartphones();
 			TypeReference<List<Smartphone>> typeReference = new TypeReference<List<Smartphone>>(){};
 			InputStream inputStream = TypeReference.class.getResourceAsStream("/json/smartphonesDB.json");
+			HashMap<String, Smartphone> mappedSmartphonesDB = new HashMap<String, Smartphone>();
+
+			for (Smartphone smartphoneDB: allExistingSmartphones
+				 ) {
+				mappedSmartphonesDB.put(smartphoneDB.getName(), smartphoneDB);
+			}
+
 			try {
 				List<Smartphone> smartphones = mapper.readValue(inputStream,typeReference);
 				for (Smartphone smartphone:smartphones) {
-					if (!smartphones.contains(smartphone))
+					if (!mappedSmartphonesDB.containsKey(smartphone.getName()))
 						smartphoneService.save(smartphone);
 				}
 				System.out.println("Smartphones Saved!");
