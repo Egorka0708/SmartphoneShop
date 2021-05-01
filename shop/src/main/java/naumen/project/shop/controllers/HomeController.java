@@ -35,6 +35,4 @@ public class HomeController {
         mav.addObject("Smartphones", smartphoneService.allSmartphones());
         return mav;
     }
-
-
 }

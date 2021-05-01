@@ -24,29 +24,19 @@ public class ShopApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(ShopApplication.class);
-//		try {
-//			Serialization(context);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
+		try {
+			Serialization(context);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
-//	public static void Serialization (ConfigurableApplicationContext context) throws IOException {
-//		SmartphoneRepository repository = context.getBean(SmartphoneRepository.class);
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		List<Smartphone> smartphones = repository.findAll();
-//		FileWriter writer = new FileWriter("C:\\Users\\Dravo\\Documents\\ProjectCars\\CarShop\\shop\\src\\main\\resources\\JSON\\ser.json",true);
-//		FileReader reader = new FileReader("C:\\Users\\Dravo\\Documents\\ProjectCars\\CarShop\\shop\\src\\main\\resources\\JSON\\ser.json");
-//		writer.append("[\n");
-//		for (Smartphone smartphone : smartphones
-//		) {
-//			String smartphoneAsString = objectMapper.writeValueAsString(smartphone);
-//			writer.append(smartphoneAsString + ",\n");
-//			//(new File("C:\\Users\\Dravo\\Documents\\ProjectCars\\CarShop\\shop\\src\\main\\resources\\JSON\\ser.json"), smartphoneAsString);
-//		}
-//		writer.append("]\n");
-//		writer.flush();
-//	}
+	public static void Serialization (ConfigurableApplicationContext context) throws IOException {
+		SmartphoneRepository repository = context.getBean(SmartphoneRepository.class);
+		ObjectMapper objectMapper = new ObjectMapper();
+		List<Smartphone> smartphones = repository.findAll();
+		objectMapper.writeValue(new File("src\\main\\resources\\JSON\\ser.json"), smartphones);
+	}
 
 	@Bean
 	CommandLineRunner runner(SmartphoneService smartphoneService){
