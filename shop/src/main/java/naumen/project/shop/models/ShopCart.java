@@ -1,6 +1,7 @@
 package naumen.project.shop.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "shopcart_table")
@@ -8,20 +9,32 @@ public class ShopCart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long idSmartphone;
 
-    protected ShopCart() {}
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List<Smartphone> smartphoneList;
 
-    public ShopCart(long id, long idSmartphone) {
-        this.id = id;
-        this.idSmartphone = idSmartphone;
-    }
+    @OneToOne(fetch = FetchType.EAGER)
+    private User user;
+
+    public ShopCart() {}
 
     public long getId() { return id; }
 
     public void setId() { this.id = id; }
 
-    public long getIdSmartphone() { return idSmartphone; }
+    public List<Smartphone> getSmartphoneList() {
+        return smartphoneList;
+    }
 
-    public void setIdSmartphone() { this.idSmartphone = idSmartphone; }
+    public void setSmartphoneList(List<Smartphone> smartphoneList) {
+        this.smartphoneList = smartphoneList;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

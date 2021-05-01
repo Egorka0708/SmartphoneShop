@@ -41,10 +41,12 @@
     </nav>
 </header>
 <div>
-    <div class="alert alert-warning mt-3">
-        <b>Смартфон: <span th:text="${Smartphone.getName()}"></span></b><br />
-        <b>Цена: <span th:text="${Smartphone.getPrice()}"></span></b>
-    </div>
+    <th:block th:each="Smartphone : ${smartphones}">
+        <div class="alert alert-warning mt-3">
+            <b>Смартфон: <span th:text="${Smartphone.getName()}"></span></b><br />
+            <b>Цена: <span th:text="${Smartphone.getPrice()}"></span></b>
+        </div>
+    </th:block>
     <hr />
     <a class="btn btn-danger mb-5" href="/checkout">Заказать</a>
 </div>
