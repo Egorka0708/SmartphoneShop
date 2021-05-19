@@ -24,7 +24,12 @@ public class SmartphonesController {
 
         if (principal instanceof UserDetails) {
             username = ((UserDetails)principal).getUsername();
-        } else {
+        } else if (principal.toString() != "anonymousUser") {
+            var user = principal.toString().split("given_name=");
+            var user_name = user[1].toString().split(",");
+            username = user_name[0];
+        }
+        else {
             username = principal.toString();
         }
         boolean isAuth = false;
