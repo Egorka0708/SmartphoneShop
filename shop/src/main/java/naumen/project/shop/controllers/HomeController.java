@@ -16,6 +16,7 @@ public class HomeController {
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelAndView home() {
+        ModelAndView mav = new ModelAndView("index");
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String username;
 
@@ -28,7 +29,7 @@ public class HomeController {
         if (username != "anonymousUser")
             isAuth = true;
 
-        ModelAndView mav = new ModelAndView("index");
+
 
         mav.addObject("username", username);
         mav.addObject("isAuth", isAuth);
